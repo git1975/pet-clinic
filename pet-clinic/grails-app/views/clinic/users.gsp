@@ -3,24 +3,21 @@
 		<meta name="layout" content="main">
 		<title>Veterinarians</title>
 	</head>
-	<body id="vets">
-		<h2>Veterinarians:</h2>
+	<body id="users">
+		<h2>Users:</h2>
 
 		<table>
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Specialties</th>
+					<th>Password</th>
 				</tr>
 			</thead>
-			<g:each var="vet" in="${vets}">
+			<g:each var="vet" in="${users}">
 				<tr>
-					<td>${vet.firstName} ${vet.lastName}</td>
+					<td>${vet.username} ${vet.password}</td>
 					<td>
-						<g:each var="speciality" in="${vet.specialities}">
-						${speciality.name}
-						</g:each>
-						<g:if test="${!vet.specialities}">none</g:if>
+
 					</td>
 				</tr>
 			</g:each>

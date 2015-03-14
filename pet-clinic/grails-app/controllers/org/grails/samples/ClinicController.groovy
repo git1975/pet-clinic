@@ -9,4 +9,8 @@ class ClinicController {
 	def vets() {
 		[vets: Vet.list()]
 	}
+	
+	def users() {
+		[users: User.list()]
+	}
 }
