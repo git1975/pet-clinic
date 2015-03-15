@@ -24,22 +24,21 @@ class UserController {
 	}
 
 	def delete() {
-		for(Iterator itr = params.findAll().iterator(); itr.hasNext();){
+		/*for(Iterator itr = params.iterator(); itr.hasNext();){
 			String key = itr.next();
-			System.out.println "->" + key;
+			System.out.println "->" + key.toString();
+		}*/
+		
+		for(User user : User.list()){
+			Object obj = params.get("users." + user.id)
+			if(obj != null){
+				if("on".equals(obj.toString())){
+					System.out.println "Delete user: " + user;
+					user.delete(flush: true);
+				}
+			}
 		}
-		
-		Object obj = params.get("format");
-		
-		System.out.println checkedUsers;
-		
-		//get list of users. this will return only the selected user
-		def selectedUsers = User.getAll(checkedUsers)
-
-		for(user in selectedUsers){
-			user.delete()
-		}
-		redirect controller:'clinic', action: 'users'
+		redirect action: 'showUsers'
 	}
 
 	def edit() {

@@ -16,7 +16,7 @@
 		</thead>
 		<g:each var="user" in="${users}">
 			<tr>
-				<td><g:checkBox name="userList" value="${false}"/> </td>
+				<td><g:checkBox name="users.${user.id}" value="${false}"/> </td>
 				<td>
 					${user.username}
 				</td>
@@ -26,11 +26,8 @@
 			</tr>
 		</g:each>
 	</table>
-	<g:link controller="user" action="add">Add user</g:link>
-	<p class="submit"><g:link controller="user" action="delete">Delete users</g:link></p>
-	
+	<g:link controller="user" action="add"><input type="button" value="Add"/></g:link>
 	<g:actionSubmit action="delete" value="Delete" />
-	<input type="submit" value="Delete2"/>
 </g:form>
 </body>
 </html>
