@@ -1,26 +1,31 @@
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<title>Veterinarians</title>
-	</head>
-	<body id="users">
-		<h2>Users:</h2>
+<head>
+<meta name="layout" content="main">
+<title>Users</title>
+</head>
+<body id="users">
+	<h2>Users:</h2>
 
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Password</th>
-				</tr>
-			</thead>
-			<g:each var="vet" in="${users}">
-				<tr>
-					<td>${vet.username} ${vet.password}</td>
-					<td>
-
-					</td>
-				</tr>
-			</g:each>
-		</table>
-	</body>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<g:each var="user" in="${users}">
+			<tr>
+				<td><g:checkBox name="selectUserList" value="${user.id}" checked="false"/> </td>
+				<td>
+					${user.username}
+				</td>
+				<td>
+					${user.password}
+				</td>
+			</tr>
+		</g:each>
+	</table>
+	<g:link controller="user" action="add">Add user</g:link>
+	<g:link controller="user" action="delete">Delete users</g:link>
+</body>
 </html>

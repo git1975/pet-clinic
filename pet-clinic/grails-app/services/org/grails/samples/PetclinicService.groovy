@@ -40,4 +40,10 @@ class PetclinicService {
 		owner.telephone = telephone
 		owner.save()
 	}
+	
+	User createUser(String username, String password) {
+		def user = new User(username: username, password: password)
+		user.save()
+		user
+	}
 }

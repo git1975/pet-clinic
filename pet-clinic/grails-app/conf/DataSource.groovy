@@ -11,7 +11,7 @@ dataSource {
 	url = "jdbc:mysql://localhost:3306/test"
 	driverClassName = "com.mysql.jdbc.Driver"
 	username = "den"
-	password = "zorind"
+	password = "den"
 }
 hibernate {
 	cache.use_second_level_cache = true
