@@ -9,5 +9,4 @@ class ClinicController {
 	def vets() {
 		[vets: Vet.list()]
 	}
-
 }

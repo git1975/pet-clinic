@@ -4,7 +4,7 @@ class UserController {
 
 	def petclinicService
 	
-	def users() {
+	def showUsers() {
 		[users: User.list()]
 	}
 
@@ -21,16 +21,6 @@ class UserController {
 
 		//redirect action: 'show', id: user.id
 		redirect controller:'clinic', action: 'users'
-	}
-
-	def show() {
-		def user = User.get(params.id)
-		if (!user) {
-			response.sendError 404
-			return
-		}
-
-		[userBean: user]
 	}
 
 	def delete() {
