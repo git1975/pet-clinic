@@ -20,7 +20,7 @@ class UserController {
 		}
 
 		//redirect action: 'show', id: user.id
-		redirect controller:'clinic', action: 'users'
+		redirect action: 'showUsers'
 	}
 
 	def delete() {
