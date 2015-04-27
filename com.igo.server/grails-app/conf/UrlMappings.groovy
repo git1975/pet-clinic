@@ -9,5 +9,9 @@ class UrlMappings {
 
         "/"(view:"/index")
         "500"(view:'/error')
+		
+		"/rest/$controller/show" {
+			action = [GET:"show"]
+		}
 	}
 }
